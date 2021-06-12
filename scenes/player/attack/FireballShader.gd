@@ -1,4 +1,3 @@
-tool
 extends TextureRect
 
 export var radius: float = 25.0

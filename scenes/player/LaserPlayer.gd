@@ -8,4 +8,4 @@ func _input(event):
 			playback.travel("attack_ready")
 
 func _ready():
-	pass
+	$AnimationTree.active = true

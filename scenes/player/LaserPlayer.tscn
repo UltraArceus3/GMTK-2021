@@ -1,14 +1,16 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/LaserPlayer.gd" type="Script" id=2]
 [ext_resource path="res://textures/circle.png" type="Texture" id=3]
 [ext_resource path="res://scenes/player/attack/FireballShader.gd" type="Script" id=4]
+[ext_resource path="res://textures/FireBallShader.tres" type="Material" id=5]
+[ext_resource path="res://textures/LaserShader.tres" type="Material" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.2839, 32.3738 )
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=2]
 resource_name = "attack_idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Attack/OutwardSphere:emitting")
@@ -106,8 +108,215 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Attack/LaserShader/ParticleDebris:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Attack/LaserShader:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, 50 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Attack/LaserShader:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:is_player_controlled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=4]
+resource_name = "attack_laser"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack/OutwardSphere:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Attack/InwardSphere:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Attack/FireballShader:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 25.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Attack/OutwardSphere:emission_sphere_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 33.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Attack/InwardSphere:emission_sphere_radius")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Attack/FireballShader:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Attack/OutwardSphere:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Attack/InwardSphere:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Attack:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Attack/LaserShader:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 50 ), Vector2( 454, 55 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Attack/LaserShader:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -25, -25 ), Vector2( -25, -27 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Attack/LaserShader/ParticleDebris:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Attack/LaserShader:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
 resource_name = "attack_ready"
 loop = true
 tracks/0/type = "value"
@@ -218,120 +427,56 @@ tracks/8/keys = {
 "update": 1,
 "values": [  ]
 }
-
-[sub_resource type="Animation" id=19]
-resource_name = "attack_ready (copy)"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Attack/OutwardSphere:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+tracks/9/type = "value"
+tracks/9/path = NodePath("Attack/LaserShader:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [  ]
+"values": [ false ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Attack/InwardSphere:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Attack/FireballShader:radius")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/10/type = "value"
+tracks/10/path = NodePath("Attack/LaserShader:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 25.0 ]
+"values": [ Vector2( -25, -25 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Attack/OutwardSphere:emission_sphere_radius")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/11/type = "value"
+tracks/11/path = NodePath("Attack/LaserShader:rect_size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 33.0 ]
+"values": [ Vector2( 50, 50 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Attack/InwardSphere:emission_sphere_radius")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/12/type = "value"
+tracks/12/path = NodePath("Attack/LaserShader/ParticleDebris:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 30.0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Attack/FireballShader:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [  ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Attack/OutwardSphere:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Attack/InwardSphere:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Attack:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
+"values": [ false ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
 resource_name = "charge_attack"
 length = 3.0
 tracks/0/type = "value"
@@ -442,180 +587,69 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath(".:is_player_controlled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "attack_idle"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "attack_laser"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "attack_ready"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "charge_attack"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachine" id=23]
-states/attack_idle/node = SubResource( 26 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/attack_idle/node = SubResource( 6 )
 states/attack_idle/position = Vector2( 77, 185 )
-states/attack_ready/node = SubResource( 20 )
+states/attack_laser/node = SubResource( 17 )
+states/attack_laser/position = Vector2( 849, 185 )
+states/attack_ready/node = SubResource( 7 )
 states/attack_ready/position = Vector2( 633, 185 )
-states/charge_attack/node = SubResource( 21 )
+states/charge_attack/node = SubResource( 8 )
 states/charge_attack/position = Vector2( 320, 185 )
-transitions = [ "charge_attack", "attack_ready", SubResource( 22 ), "attack_idle", "charge_attack", SubResource( 27 ) ]
+transitions = [ "charge_attack", "attack_ready", SubResource( 9 ), "attack_idle", "charge_attack", SubResource( 10 ), "attack_ready", "attack_laser", SubResource( 18 ) ]
 start_node = "attack_idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=6]
-function = 0
+[sub_resource type="Curve" id=15]
+min_value = 1.0
+max_value = 10.0
+_data = [ Vector2( 0, 4.4594 ), 0.0, 0.0, 0, 0, Vector2( 0.485714, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.00485 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="VisualShaderNodeVectorOp" id=7]
-operator = 2
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0, 0.5, 0.664474, 0.743421, 0.828947, 0.960526 )
+colors = PoolColorArray( 0.6886, 0.0376578, 0.0376578, 1, 1, 0, 0, 1, 1, 0.48559, 0, 1, 0.95191, 1, 0, 1, 1, 1, 1, 1, 0.204225, 0.204225, 0.204225, 1 )
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=8]
-function = 24
-
-[sub_resource type="VisualShaderNodeColorOp" id=9]
-default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 0, 0 ) ]
-operator = 8
-
-[sub_resource type="OpenSimplexNoise" id=10]
-octaves = 9
-period = 18.4
-persistence = 0.361
-lacunarity = 4.0
-
-[sub_resource type="NoiseTexture" id=11]
-seamless = true
-noise = SubResource( 10 )
-
-[sub_resource type="VisualShaderNodeTexture" id=12]
-output_port_for_preview = 0
-texture = SubResource( 11 )
-
-[sub_resource type="VisualShaderNodeInput" id=13]
-input_name = "screen_uv"
-
-[sub_resource type="VisualShaderNodeTexture" id=14]
-output_port_for_preview = 1
-texture = ExtResource( 3 )
-
-[sub_resource type="VisualShaderNodeInput" id=15]
-input_name = "time"
-
-[sub_resource type="VisualShader" id=16]
-code = "shader_type canvas_item;
-uniform sampler2D tex_frg_3;
-uniform sampler2D tex_frg_8;
-
-
-
-void vertex() {
-// Output:0
-
-}
-
-void fragment() {
-// Input:4
-	vec3 n_out4p0 = vec3(SCREEN_UV, 0.0);
-
-// Input:9
-	float n_out9p0 = TIME;
-
-// ScalarFunc:10
-	float n_out10p0 = sin(n_out9p0);
-
-// ScalarFunc:12
-	float n_out12p0 = exp2(n_out10p0);
-
-// VectorOp:11
-	vec3 n_out11p0 = n_out4p0 * vec3(n_out12p0);
-
-// Texture:3
-	vec4 tex_frg_3_read = texture(tex_frg_3, n_out11p0.xy);
-	vec3 n_out3p0 = tex_frg_3_read.rgb;
-	float n_out3p1 = tex_frg_3_read.a;
-
-// ColorOp:13
-	vec3 n_in13p1 = vec3(1.00000, 0.00000, 0.00000);
-	vec3 n_out13p0;
-	{
-		float base = n_out3p0.x;
-		float blend = n_in13p1.x;
-		if (base < 0.5) {
-			n_out13p0.x = (base * (2.0 * blend));
-		} else {
-			n_out13p0.x = (1.0 - (1.0 - base) * (1.0 - 2.0 * (blend - 0.5)));
-		}
-	}
-	{
-		float base = n_out3p0.y;
-		float blend = n_in13p1.y;
-		if (base < 0.5) {
-			n_out13p0.y = (base * (2.0 * blend));
-		} else {
-			n_out13p0.y = (1.0 - (1.0 - base) * (1.0 - 2.0 * (blend - 0.5)));
-		}
-	}
-	{
-		float base = n_out3p0.z;
-		float blend = n_in13p1.z;
-		if (base < 0.5) {
-			n_out13p0.z = (base * (2.0 * blend));
-		} else {
-			n_out13p0.z = (1.0 - (1.0 - base) * (1.0 - 2.0 * (blend - 0.5)));
-		}
-	}
-
-// Texture:8
-	vec4 tex_frg_8_read = texture(tex_frg_8, UV.xy);
-	vec3 n_out8p0 = tex_frg_8_read.rgb;
-	float n_out8p1 = tex_frg_8_read.a;
-
-// Output:0
-	COLOR.rgb = n_out13p0;
-	COLOR.a = n_out8p1;
-
-}
-
-void light() {
-// Output:0
-
-}
-"
-graph_offset = Vector2( -665.578, 100.536 )
-mode = 1
-flags/light_only = false
-nodes/fragment/3/node = SubResource( 12 )
-nodes/fragment/3/position = Vector2( -80, 0 )
-nodes/fragment/4/node = SubResource( 13 )
-nodes/fragment/4/position = Vector2( -620, 220 )
-nodes/fragment/8/node = SubResource( 14 )
-nodes/fragment/8/position = Vector2( 340, 440 )
-nodes/fragment/9/node = SubResource( 15 )
-nodes/fragment/9/position = Vector2( -620, 360 )
-nodes/fragment/10/node = SubResource( 6 )
-nodes/fragment/10/position = Vector2( -580, 460 )
-nodes/fragment/11/node = SubResource( 7 )
-nodes/fragment/11/position = Vector2( -280, 240 )
-nodes/fragment/12/node = SubResource( 8 )
-nodes/fragment/12/position = Vector2( -380, 460 )
-nodes/fragment/13/node = SubResource( 9 )
-nodes/fragment/13/position = Vector2( 200, 200 )
-nodes/fragment/connections = PoolIntArray( 8, 1, 0, 1, 9, 0, 10, 0, 4, 0, 11, 0, 11, 0, 3, 0, 10, 0, 12, 0, 12, 0, 11, 1, 3, 0, 13, 0, 13, 0, 0, 0 )
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 16 )
-
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0, 0.744966, 0.939597, 1 )
 colors = PoolColorArray( 0.392157, 0.0431373, 0.0431373, 1, 0.803922, 0.12549, 0.156863, 1, 0.96875, 0.0454102, 0.0454102, 1, 0.994485, 0.831543, 0.831543, 1 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=14]
 min_value = 1.0
 max_value = 10.0
 _data = [ Vector2( 0, 3.18182 ), 0.0, 0.0, 0, 0, Vector2( 0.782857, 1 ), 0.0, 0.0, 0, 0 ]
@@ -630,24 +664,53 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/attack_idle = SubResource( 25 )
-anims/attack_ready = SubResource( 18 )
-"anims/attack_ready (copy)" = SubResource( 19 )
-anims/charge_attack = SubResource( 17 )
+anims/attack_idle = SubResource( 2 )
+anims/attack_laser = SubResource( 4 )
+anims/attack_ready = SubResource( 3 )
+anims/charge_attack = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 23 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 24 )
+parameters/playback = SubResource( 12 )
 
 [node name="Attack" type="Node2D" parent="."]
 position = Vector2( 45, 0 )
 z_index = 3
 
+[node name="LaserShader" type="TextureRect" parent="Attack"]
+visible = false
+material = ExtResource( 6 )
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_pivot_offset = Vector2( 0, 25 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParticleDebris" type="CPUParticles2D" parent="Attack/LaserShader"]
+position = Vector2( 260, 25 )
+z_index = 5
+emitting = false
+amount = 800
+lifetime = 2.0
+fixed_fps = 30
+emission_shape = 2
+emission_rect_extents = Vector2( 200, 25 )
+direction = Vector2( -1, 0 )
+spread = 25.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+scale_amount_curve = SubResource( 15 )
+color_ramp = SubResource( 16 )
+
 [node name="FireballShader" type="TextureRect" parent="Attack"]
 visible = false
-material = SubResource( 5 )
+material = ExtResource( 5 )
 margin_left = -25.0
 margin_top = -25.0
 margin_right = 25.0
@@ -670,7 +733,7 @@ emission_sphere_radius = 0.01
 gravity = Vector2( 0, 0 )
 radial_accel = -40.0
 tangential_accel = 20.0
-color_ramp = SubResource( 2 )
+color_ramp = SubResource( 13 )
 
 [node name="InwardSphere" type="CPUParticles2D" parent="Attack"]
 visible = false
@@ -681,5 +744,5 @@ emission_sphere_radius = 0.01
 gravity = Vector2( 0, 0 )
 radial_accel = -30.0
 tangential_accel = 20.0
-scale_amount_curve = SubResource( 3 )
-color_ramp = SubResource( 2 )
+scale_amount_curve = SubResource( 14 )
+color_ramp = SubResource( 13 )
