@@ -18,5 +18,7 @@ func _input_to_velocity() -> void:
 func _physics_process(_delta):
 	if is_player_controlled:
 		_input_to_velocity()
+	else:
+		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
 
