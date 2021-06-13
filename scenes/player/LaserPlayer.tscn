@@ -850,15 +850,17 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 12 )
 
 [node name="Attack" type="Node2D" parent="."]
+visible = false
 position = Vector2( 45, 0 )
 z_index = 3
 
 [node name="LaserShader" type="TextureRect" parent="Attack"]
+visible = false
 material = ExtResource( 6 )
 margin_left = -25.0
-margin_top = -24.3
-margin_right = 429.0
-margin_bottom = 25.2
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 25 )
 texture = ExtResource( 3 )
 expand = true
@@ -883,6 +885,7 @@ scale_amount_curve = SubResource( 15 )
 color_ramp = SubResource( 16 )
 
 [node name="FireballShader" type="TextureRect" parent="Attack"]
+visible = false
 material = ExtResource( 5 )
 margin_left = -25.0
 margin_top = -25.0
@@ -894,7 +897,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-radius = 2.5
+radius = 0.0
 
 [node name="OutwardSphere" type="CPUParticles2D" parent="Attack"]
 visible = false
@@ -902,7 +905,7 @@ emitting = false
 amount = 200
 lifetime = 2.0
 emission_shape = 1
-emission_sphere_radius = 33.0
+emission_sphere_radius = 0.01
 gravity = Vector2( 0, 0 )
 radial_accel = -40.0
 tangential_accel = 20.0
@@ -913,7 +916,7 @@ visible = false
 emitting = false
 amount = 200
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 0.01
 gravity = Vector2( 0, 0 )
 radial_accel = -30.0
 tangential_accel = 20.0

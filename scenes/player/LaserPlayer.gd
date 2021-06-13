@@ -8,7 +8,7 @@ func _input(event):
 			match playback.get_current_node():
 				"attack_ready":
 					playback.travel("attack_laser")
-				_:
+				"attack_idle":
 					playback.travel("attack_ready")
 
 func _ready():
