@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name DissovableEnemy
 
+signal _on_death
 
 var velocity: Vector2
 var push_velo: Vector2
@@ -45,6 +46,7 @@ func _on_LaserCollision_area_entered(area):
 		can_move = false
 		$CollisionShape2D.disabled = true
 		Global.points += 1
+		emit_signal("_on_death")
 		$DissovableSprite._dissolve()
 	
 func _physics_process(_delta):
