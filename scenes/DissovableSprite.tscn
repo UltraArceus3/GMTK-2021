@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/enemy/DissovableSprite.gd" type="Script" id=2]
 [ext_resource path="res://textures/pixel.png" type="Texture" id=3]
+[ext_resource path="res://textures/enemy0.png" type="Texture" id=4]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type particles;
@@ -256,8 +257,7 @@ texture = ExtResource( 3 )
 [node name="sprite_layer" type="Node2D" parent="."]
 
 [node name="DissovableSprite" type="Sprite" parent="sprite_layer"]
-modulate = Color( 1, 0, 0, 1 )
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sprite_layer/DissovableSprite"]
 anims/dissolve = SubResource( 1 )
