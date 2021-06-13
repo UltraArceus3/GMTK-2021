@@ -25,7 +25,7 @@ func _physics_process(_delta):
 	else:
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
-	print($Attack.scale)
+	#print($Attack.scale)
 
 
 func _facing():

@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "BasePlayer2D",
 "language": "GDScript",
 "path": "res://scenes/player/BasePlayer2D.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "DissovableEnemy",
+"language": "GDScript",
+"path": "res://scenes/enemy/enemy0.gd"
+}, {
+"base": "Node2D",
+"class": "DissovableSprite",
+"language": "GDScript",
+"path": "res://scenes/enemy/DissovableSprite.gd"
 } ]
 _global_script_class_icons={
-"BasePlayer2D": ""
+"BasePlayer2D": "",
+"DissovableEnemy": "",
+"DissovableSprite": ""
 }
 
 [application]
