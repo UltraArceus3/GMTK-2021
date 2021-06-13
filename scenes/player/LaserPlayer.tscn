@@ -916,6 +916,7 @@ max_value = 10.0
 _data = [ Vector2( 0, 3.18182 ), 0.0, 0.0, 0, 0, Vector2( 0.782857, 1 ), 0.0, 0.0, 0, 0 ]
 
 [node name="LaserPlayer" type="KinematicBody2D"]
+scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -937,15 +938,16 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 12 )
 
 [node name="Attack" type="Node2D" parent="."]
+visible = false
 position = Vector2( 45, 0 )
 z_index = 3
 
 [node name="LaserShader" type="TextureRect" parent="Attack"]
 material = ExtResource( 6 )
 margin_left = -25.0
-margin_top = -27.0
-margin_right = 429.0
-margin_bottom = 28.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 25 )
 texture = ExtResource( 3 )
 expand = true
@@ -956,7 +958,6 @@ __meta__ = {
 [node name="ParticleDebris" type="CPUParticles2D" parent="Attack/LaserShader"]
 position = Vector2( 260, 25 )
 z_index = 5
-emitting = false
 amount = 800
 lifetime = 2.0
 fixed_fps = 30
@@ -970,15 +971,13 @@ scale_amount_curve = SubResource( 15 )
 color_ramp = SubResource( 16 )
 
 [node name="AttackPush" type="Area2D" parent="Attack/LaserShader"]
-position = Vector2( 220, 27.5 )
-scale = Vector2( 9.08, 1.1 )
+position = Vector2( 25, 25 )
 gravity = 0.0
 collision_layer = 512
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/LaserShader/AttackPush"]
 shape = SubResource( 23 )
-disabled = true
 
 [node name="FireballShader" type="TextureRect" parent="Attack"]
 material = ExtResource( 5 )
