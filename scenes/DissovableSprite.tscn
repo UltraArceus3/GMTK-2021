@@ -214,7 +214,7 @@ shader_param/sprite = ExtResource( 1 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "dissolve"
-length = 3.6
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1

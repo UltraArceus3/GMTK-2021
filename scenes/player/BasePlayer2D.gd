@@ -9,6 +9,9 @@ var flip_scale: int = 3
 
 export var is_player_controlled = true
 
+func _ready():
+	Global.player = self.get_path()
+
 func _input_to_velocity() -> void:
 	velocity.y = (float(Input.is_action_pressed("ui_down")) - float(Input.is_action_pressed("ui_up")))
 	velocity.x = (float(Input.is_action_pressed("ui_right")) - float(Input.is_action_pressed("ui_left")))

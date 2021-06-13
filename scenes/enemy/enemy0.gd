@@ -26,7 +26,13 @@ func _push_process() -> void:
 
 func _on_LaserCollision_area_entered(area):
 	if area.name == "AttackPush":
+		#var dust_velocity = 50
+		#if $DissovableSprite.scale.x < 0:
+			#dust_velocity = -abs(dust_velocity)
+			
 		if area.get_parent().get_parent().scale.x < 0:
+			#dust_velocity = -dust_velocity
+			
 			$DissovableSprite.dissolve_particle.process_material.set_shader_param("initial_linear_velocity", -50)
 		$DissovableSprite._dissolve()
 	
